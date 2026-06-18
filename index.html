@@ -14,6 +14,9 @@
             --accent-glow: rgba(0, 255, 102, 0.35);
             --marquee-gold: #ffb700;
             --marquee-glow: rgba(255, 183, 0, 0.4);
+            /* Upgraded High-Intensity Metallic Silver Palette */
+            --silver-chrome: #f1f5f9; /* Ultra bright polished silver core */
+            --silver-glow: rgba(226, 232, 240, 0.45); /* Intense platinic neon flare */
             --text-main: #ffffff;
             --text-muted: #6c7d93;
             --glass-border: rgba(255, 255, 255, 0.05);
@@ -47,7 +50,7 @@
             animation: orbMotion 16s infinite alternate ease-in-out;
         }
         .orb-1 { top: -10%; left: -5%; }
-        .orb-2 { bottom: -5%; right: -5%; animation-delay: -8s; background: radial-gradient(circle, rgba(255, 183, 0, 0.02) 0%, transparent 70%); }
+        .orb-2 { bottom: -5%; right: -5%; animation-delay: -8s; background: radial-gradient(circle, rgba(226, 232, 240, 0.03) 0%, transparent 70%); }
 
         @keyframes orbMotion {
             0% { transform: translate(0, 0) scale(1); }
@@ -67,7 +70,6 @@
         .ticker {
             display: flex;
             white-space: nowrap;
-            /* Ultra fast dynamic pacing optimized to 6s for maximum energetic tournament rhythm */
             animation: tickerMove 6s linear infinite;
         }
 
@@ -168,7 +170,6 @@
             padding: 0 20px;
         }
 
-        /* Standard Roster Card */
         .player-card {
             background: var(--card-bg);
             border: 1px solid var(--glass-border);
@@ -184,14 +185,11 @@
 
         .player-card:hover {
             transform: translateY(-8px);
-            border-color: var(--accent-neon);
-            box-shadow: 0 15px 35px rgba(0, 255, 102, 0.1);
         }
 
         .player-number {
             font-size: 0.8rem;
             font-weight: 700;
-            color: var(--text-muted);
             margin-bottom: 12px;
             display: block;
         }
@@ -201,17 +199,18 @@
             font-weight: 700;
             color: #ffffff;
             line-height: 1.3;
+            transition: all 0.3s ease;
         }
 
-        /* --- DYNAMIC HIGHLIGHT: MARQUEE ELITE --- */
-        .player-card.marquee-elite {
-            background: linear-gradient(135deg, rgba(20, 28, 43, 0.9) 0%, rgba(255, 183, 0, 0.04) 100%);
-            border: 1px solid rgba(255, 183, 0, 0.35);
+        /* --- DYNAMIC HIGHLIGHT: TOP 6 (CAPTAIN TIER) --- */
+        .player-card.captain-tier {
+            background: linear-gradient(135deg, rgba(20, 28, 43, 0.95) 0%, rgba(255, 183, 0, 0.04) 100%);
+            border: 1px solid rgba(255, 183, 0, 0.4);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .player-card.marquee-elite::after {
-            content: 'MARQUEE TIER';
+        .player-card.captain-tier::after {
+            content: 'CAPTAIN TIER';
             position: absolute;
             top: 14px;
             right: 16px;
@@ -225,17 +224,55 @@
             box-shadow: 0 2px 10px var(--marquee-glow);
         }
 
-        .player-card.marquee-elite .player-number {
+        .player-card.captain-tier .player-number {
             color: var(--marquee-gold);
         }
 
-        .player-card.marquee-elite:hover {
+        .player-card.captain-tier:hover {
             border-color: var(--marquee-gold);
-            box-shadow: 0 15px 40px rgba(255, 183, 0, 0.15);
+            box-shadow: 0 15px 40px rgba(255, 183, 0, 0.25);
         }
 
-        .player-card.marquee-elite:hover .player-name {
+        .player-card.captain-tier:hover .player-name {
             color: var(--marquee-gold);
+            text-shadow: 0 0 15px var(--marquee-glow);
+        }
+
+        /* --- PREMIUM CHROMATIC RE-HIGHLIGHT: REST (PLAYER TIER) --- */
+        .player-card.player-tier {
+            background: linear-gradient(135deg, rgba(16, 22, 36, 0.9) 0%, rgba(241, 245, 249, 0.03) 100%);
+            border: 1px solid rgba(241, 245, 249, 0.25); /* Bold high-contrast silver framework layout boundary */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .player-card.player-tier::after {
+            content: 'PLAYER TIER';
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: #05070a;
+            background: linear-gradient(135deg, #ffffff, #94a3b8); /* Solid multi-tonal aluminum badge styling layout */
+            padding: 3px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
+        }
+
+        .player-card.player-tier .player-number {
+            color: #94a3b8; /* Chrome secondary color profile mapping */
+        }
+
+        .player-card.player-tier:hover {
+            border-color: var(--silver-chrome);
+            background: linear-gradient(135deg, rgba(26, 35, 54, 0.95) 0%, rgba(241, 245, 249, 0.08) 100%);
+            box-shadow: 0 15px 35px var(--silver-glow), inset 0 0 15px rgba(241, 245, 249, 0.05); /* Double-sided dimensional light blast mapping */
+        }
+
+        .player-card.player-tier:hover .player-name {
+            color: #ffffff;
+            text-shadow: 0 0 15px var(--silver-chrome); /* High metallic glow definition */
         }
 
         /* --- PROFILE WINDOW MODAL --- */
@@ -280,30 +317,41 @@
             transform: translateY(0) scale(1);
         }
 
+        /* --- PREMIUM VECTOR SVG CLOSE CONTROLLER --- */
         .close-btn {
             position: absolute;
             top: 24px;
             right: 24px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            color: #a3b3c5;
+            background: rgba(18, 24, 38, 0.85); 
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #ffffff;
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            font-size: 1.4rem;
             cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: all 0.25s ease;
+            transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
             z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .close-btn svg {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .close-btn:hover {
-            background: #ff3b30;
-            border-color: #ff3b30;
-            color: white;
-            transform: rotate(90deg);
+            border-color: var(--accent-neon);
+            color: var(--accent-neon);
+            background: rgba(0, 255, 102, 0.05);
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.3);
+        }
+
+        .close-btn:hover svg {
+            transform: rotate(90deg); 
         }
 
         /* Split Window Mechanics: Photo Left (Strict 1:1), Elements Right */
@@ -411,7 +459,6 @@
             line-height: 2;
         }
 
-        /* Highly Professional Glowing Vector Engine Heart */
         .pro-heart {
             display: inline-block;
             width: 12px;
@@ -477,7 +524,13 @@
     <!-- DYNAMIC PROFILE DETAIL SLIDEOUT MODAL -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-box">
-            <button class="close-btn" id="closeBtn">&times;</button>
+            
+            <button class="close-btn" id="closeBtn" aria-label="Close window">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
             
             <!-- LEFT SPLIT WINDOW: ASSIGNED PHOTO (Strict 1:1) -->
             <div class="modal-left">
@@ -520,7 +573,6 @@
 
     <!-- INTERACTION LOGIC MATRIX -->
     <script>
-        // Official Verified Database Containing All 48 Linked Records Custom Configured
         const playersData = [
             { id: 1, name: "Laxmikant Panda", phone: "9040057838", wicketkeeper: "No", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Fast (Roundarm)", image: "image1.png" },
             { id: 2, name: "Subhasis Dhala", phone: "8249110850", wicketkeeper: "Yes", role: "All rounder", batSkill: "Left Handed", bowlSkill: "Left Arm Chuck (Spin only)", image: "image2.png" },
@@ -582,11 +634,10 @@
             players.forEach(player => {
                 const card = document.createElement('div');
                 
-                // Assign premium styling layer if the entry resides within the first 6 slots
                 if (player.id <= 6) {
-                    card.className = 'player-card marquee-elite';
+                    card.className = 'player-card captain-tier';
                 } else {
-                    card.className = 'player-card';
+                    card.className = 'player-card player-tier';
                 }
 
                 card.innerHTML = `
@@ -613,7 +664,6 @@
             document.getElementById('modalBat').innerText = player.batSkill;
             document.getElementById('modalBowl').innerText = player.bowlSkill;
 
-            // Strict Layout Photo Engine Loader
             const imgContainer = document.getElementById('modalImageContainer');
             imgContainer.innerHTML = `<img src="${player.image}" alt="${player.name}" id="targetModalImg">`;
             
@@ -644,7 +694,6 @@
             renderGrid(filteredPlayers);
         });
 
-        // Initialize active interface build layout
         renderGrid(playersData);
     </script>
 </body>
