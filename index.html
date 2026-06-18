@@ -14,9 +14,8 @@
             --accent-glow: rgba(0, 255, 102, 0.35);
             --marquee-gold: #ffb700;
             --marquee-glow: rgba(255, 183, 0, 0.4);
-            /* Upgraded High-Intensity Metallic Silver Palette */
-            --silver-chrome: #f1f5f9; /* Ultra bright polished silver core */
-            --silver-glow: rgba(226, 232, 240, 0.45); /* Intense platinic neon flare */
+            --silver-chrome: #f1f5f9; 
+            --silver-glow: rgba(226, 232, 240, 0.45); 
             --text-main: #ffffff;
             --text-muted: #6c7d93;
             --glass-border: rgba(255, 255, 255, 0.05);
@@ -50,7 +49,7 @@
             animation: orbMotion 16s infinite alternate ease-in-out;
         }
         .orb-1 { top: -10%; left: -5%; }
-        .orb-2 { bottom: -5%; right: -5%; animation-delay: -8s; background: radial-gradient(circle, rgba(226, 232, 240, 0.03) 0%, transparent 70%); }
+        .orb-2 { bottom: -5%; right: -5%; animation-delay: -8s; background: radial-gradient(circle, rgba(241, 245, 249, 0.02) 0%, transparent 70%); }
 
         @keyframes orbMotion {
             0% { transform: translate(0, 0) scale(1); }
@@ -160,7 +159,7 @@
             background: #0d121c;
         }
 
-        /* --- PLAYER MATRIX GRID --- */
+        /* --- PLAYER MATRIX GRID (CLEAN DIRECTORY VERSION) --- */
         .grid-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -202,7 +201,7 @@
             transition: all 0.3s ease;
         }
 
-        /* --- DYNAMIC HIGHLIGHT: TOP 6 (CAPTAIN TIER) --- */
+        /* --- GOLD CAPTAIN GRID CARDS --- */
         .player-card.captain-tier {
             background: linear-gradient(135deg, rgba(20, 28, 43, 0.95) 0%, rgba(255, 183, 0, 0.04) 100%);
             border: 1px solid rgba(255, 183, 0, 0.4);
@@ -224,24 +223,14 @@
             box-shadow: 0 2px 10px var(--marquee-glow);
         }
 
-        .player-card.captain-tier .player-number {
-            color: var(--marquee-gold);
-        }
+        .player-card.captain-tier .player-number { color: var(--marquee-gold); }
+        .player-card.captain-tier:hover { border-color: var(--marquee-gold); box-shadow: 0 15px 40px rgba(255, 183, 0, 0.25); }
+        .player-card.captain-tier:hover .player-name { color: var(--marquee-gold); text-shadow: 0 0 15px var(--marquee-glow); }
 
-        .player-card.captain-tier:hover {
-            border-color: var(--marquee-gold);
-            box-shadow: 0 15px 40px rgba(255, 183, 0, 0.25);
-        }
-
-        .player-card.captain-tier:hover .player-name {
-            color: var(--marquee-gold);
-            text-shadow: 0 0 15px var(--marquee-glow);
-        }
-
-        /* --- PREMIUM CHROMATIC RE-HIGHLIGHT: REST (PLAYER TIER) --- */
+        /* --- SILVER PLAYER GRID CARDS --- */
         .player-card.player-tier {
             background: linear-gradient(135deg, rgba(16, 22, 36, 0.9) 0%, rgba(241, 245, 249, 0.03) 100%);
-            border: 1px solid rgba(241, 245, 249, 0.25); /* Bold high-contrast silver framework layout boundary */
+            border: 1px solid rgba(241, 245, 249, 0.25); 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
@@ -253,27 +242,16 @@
             font-size: 0.65rem;
             font-weight: 800;
             color: #05070a;
-            background: linear-gradient(135deg, #ffffff, #94a3b8); /* Solid multi-tonal aluminum badge styling layout */
+            background: linear-gradient(135deg, #ffffff, #94a3b8); 
             padding: 3px 8px;
             border-radius: 4px;
             letter-spacing: 0.5px;
             box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
         }
 
-        .player-card.player-tier .player-number {
-            color: #94a3b8; /* Chrome secondary color profile mapping */
-        }
-
-        .player-card.player-tier:hover {
-            border-color: var(--silver-chrome);
-            background: linear-gradient(135deg, rgba(26, 35, 54, 0.95) 0%, rgba(241, 245, 249, 0.08) 100%);
-            box-shadow: 0 15px 35px var(--silver-glow), inset 0 0 15px rgba(241, 245, 249, 0.05); /* Double-sided dimensional light blast mapping */
-        }
-
-        .player-card.player-tier:hover .player-name {
-            color: #ffffff;
-            text-shadow: 0 0 15px var(--silver-chrome); /* High metallic glow definition */
-        }
+        .player-card.player-tier .player-number { color: #94a3b8; }
+        .player-card.player-tier:hover { border-color: var(--silver-chrome); background: linear-gradient(135deg, rgba(26, 35, 54, 0.95) 0%, rgba(241, 245, 249, 0.08) 100%); box-shadow: 0 15px 35px var(--silver-glow); }
+        .player-card.player-tier:hover .player-name { color: #ffffff; text-shadow: 0 0 15px var(--silver-chrome); }
 
         /* --- PROFILE WINDOW MODAL --- */
         .modal-overlay {
@@ -294,10 +272,7 @@
             padding: 20px;
         }
 
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
 
         .modal-box {
             background: #0b0f17;
@@ -313,11 +288,8 @@
             display: flex;
         }
 
-        .modal-overlay.active .modal-box {
-            transform: translateY(0) scale(1);
-        }
+        .modal-overlay.active .modal-box { transform: translateY(0) scale(1); }
 
-        /* --- PREMIUM VECTOR SVG CLOSE CONTROLLER --- */
         .close-btn {
             position: absolute;
             top: 24px;
@@ -337,191 +309,77 @@
             backdrop-filter: blur(10px);
         }
 
-        .close-btn svg {
-            width: 14px;
-            height: 14px;
-            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
+        .close-btn svg { width: 14px; height: 14px; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .close-btn:hover { border-color: var(--accent-neon); color: var(--accent-neon); background: rgba(0, 255, 102, 0.05); box-shadow: 0 0 20px rgba(0, 255, 102, 0.3); }
+        .close-btn:hover svg { transform: rotate(90deg); }
 
-        .close-btn:hover {
-            border-color: var(--accent-neon);
-            color: var(--accent-neon);
-            background: rgba(0, 255, 102, 0.05);
-            box-shadow: 0 0 20px rgba(0, 255, 102, 0.3);
-        }
+        .modal-left { flex: 1.1; background: #07090e; display: flex; justify-content: center; align-items: center; padding: 40px; border-right: 1px solid rgba(255, 255, 255, 0.04); }
+        .modal-img-frame { width: 100%; aspect-ratio: 1 / 1; border-radius: 16px; background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%); border: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--text-muted); overflow: hidden; position: relative; }
+        .modal-img-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-        .close-btn:hover svg {
-            transform: rotate(90deg); 
-        }
-
-        /* Split Window Mechanics: Photo Left (Strict 1:1), Elements Right */
-        .modal-left {
-            flex: 1.1;
-            background: #07090e;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            border-right: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .modal-img-frame {
-            width: 100%;
-            aspect-ratio: 1 / 1; 
-            border-radius: 16px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: var(--text-muted);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .modal-img-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            display: block;
-        }
-
-        .modal-right {
-            flex: 1.9;
-            padding: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .modal-player-name {
-            font-size: 2.4rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 25px;
-            letter-spacing: -0.5px;
-        }
-
-        .detail-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .detail-row:last-child {
-            border-bottom: none;
-        }
-
-        .detail-label {
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .detail-value {
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 1.05rem;
-        }
-
-        .highlight-badge {
-            background: rgba(0, 255, 102, 0.1);
-            border: 1px solid var(--accent-neon);
-            color: var(--accent-neon);
-            padding: 4px 14px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        /* --- PROFESSIONAL EXECUTIVE FOOTER --- */
-        footer {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 40px 20px;
-            background: #030508;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            text-align: center;
-            z-index: 10;
-        }
-
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            line-height: 2;
-        }
-
-        .pro-heart {
+        .modal-right { flex: 1.9; padding: 50px; display: flex; flex-direction: column; justify-content: center; }
+        
+        /* --- HIGH VISIBILITY INNER CARD ORGANISER HIGHLIGHT LINE --- */
+        .modal-organiser-line {
             display: inline-block;
-            width: 12px;
-            height: 12px;
-            fill: var(--accent-neon);
-            margin: 0 4px;
-            vertical-align: middle;
-            position: relative;
-            top: -1px;
-            filter: drop-shadow(0 0 6px var(--accent-neon));
-            animation: proPulse 1.5s infinite ease-in-out;
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #05070a;
+            background: var(--accent-neon);
+            padding: 4px 12px;
+            border-radius: 6px;
+            margin-bottom: 14px;
+            box-shadow: 0 0 15px var(--accent-glow);
+            text-transform: uppercase;
         }
 
-        @keyframes proPulse {
-            0% { transform: scale(1); filter: drop-shadow(0 0 4px var(--accent-neon)); }
-            50% { transform: scale(1.18); filter: drop-shadow(0 0 10px var(--accent-neon)); }
-            100% { transform: scale(1); filter: drop-shadow(0 0 4px var(--accent-neon)); }
-        }
+        .modal-player-name { font-size: 2.4rem; font-weight: 800; color: white; margin-bottom: 25px; letter-spacing: -0.5px; }
 
-        /* Adaptive Media Core Breakpoints */
-        @media (max-width: 720px) {
-            .modal-box { flex-direction: column; }
-            .modal-left { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.04); padding: 35px; }
-            .modal-right { padding: 35px; }
-            header h1 { font-size: 2.6rem; }
-        }
+        .detail-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
+        .detail-row:last-child { border-bottom: none; }
+        .detail-label { color: var(--text-muted); font-weight: 500; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .detail-value { color: #ffffff; font-weight: 700; font-size: 1.05rem; }
+        .highlight-badge { background: rgba(0, 255, 102, 0.1); border: 1px solid var(--accent-neon); color: var(--accent-neon); padding: 4px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; }
+
+        footer { position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 20px; background: #030508; border-top: 1px solid rgba(255, 255, 255, 0.03); text-align: center; z-index: 10; }
+        footer p { color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.5px; line-height: 2; }
+
+        .pro-heart { display: inline-block; width: 12px; height: 12px; fill: var(--accent-neon); margin: 0 4px; vertical-align: middle; position: relative; top: -1px; filter: drop-shadow(0 0 6px var(--accent-neon)); animation: proPulse 1.5s infinite ease-in-out; }
+        @keyframes proPulse { 0% { transform: scale(1); filter: drop-shadow(0 0 4px var(--accent-neon)); } 50% { transform: scale(1.18); filter: drop-shadow(0 0 10px var(--accent-neon)); } 100% { transform: scale(1); filter: drop-shadow(0 0 4px var(--accent-neon)); } }
+
+        @media (max-width: 720px) { .modal-box { flex-direction: column; } .modal-left { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.04); padding: 35px; } .modal-right { padding: 35px; } header h1 { font-size: 2.6rem; } }
     </style>
 </head>
 <body>
 
-    <!-- LIGHT KINETIC ENERGY BACKGROUND PARTICLES -->
     <div class="bg-glow-orb orb-1"></div>
     <div class="bg-glow-orb orb-2"></div>
 
-    <!-- LIVE BROADCAST STREAM TICKER -->
     <div class="ticker-wrap">
         <div class="ticker">
             <div class="ticker-item"><span>•</span> CHATTIS WARRIOR TOURNAMENT SEASON 2026</div>
             <div class="ticker-item"><span>•</span> OFFICIAL PLAYER DIRECTORY LIVE</div>
             <div class="ticker-item"><span>•</span> 48 CONTENDERS LOCKED & CONFIRMED</div>
-            <!-- Duplicated row buffer to sustain endless visual loop -->
             <div class="ticker-item"><span>•</span> CHATTIS WARRIOR TOURNAMENT SEASON 2026</div>
             <div class="ticker-item"><span>•</span> OFFICIAL PLAYER DIRECTORY LIVE</div>
             <div class="ticker-item"><span>•</span> 48 CONTENDERS LOCKED & CONFIRMED</div>
         </div>
     </div>
 
-    <!-- MAIN CORPORATE BRANDING HEADER -->
     <header>
         <h1 id="main-title">Chattis Warrior Tournament</h1>
         <p id="sub-title">Official Campaign Pool</p>
         <div class="stats-badge">48 Registered System Records</div>
     </header>
 
-    <!-- LIVE CONTEXT FIELD SEARCH -->
     <div class="search-container">
         <input type="text" id="searchBar" class="search-input" placeholder="Search roster by entering player name...">
     </div>
 
-    <!-- ACTIVE PLAYER MATRIX ROSTER -->
     <main class="grid-container" id="gridContainer"></main>
 
-    <!-- DYNAMIC PROFILE DETAIL SLIDEOUT MODAL -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-box">
             
@@ -532,13 +390,14 @@
                 </svg>
             </button>
             
-            <!-- LEFT SPLIT WINDOW: ASSIGNED PHOTO (Strict 1:1) -->
             <div class="modal-left">
                 <div class="modal-img-frame" id="modalImageContainer"></div>
             </div>
 
-            <!-- RIGHT SPLIT WINDOW: SPECIFIC PARTICULARS -->
+            <!-- RIGHT DETAILS PANEL CONTAINER -->
             <div class="modal-right">
+                <!-- Programmatically targetable holder lane for Organiser notification logic strings -->
+                <div id="modalOrganiserContainer"></div>
                 <h2 class="modal-player-name" id="modalName">Player Name</h2>
                 
                 <div class="detail-row">
@@ -565,22 +424,20 @@
         </div>
     </div>
 
-    <!-- PREMIUM COMPLIANT FOOTER -->
     <footer>
         <p>© 2026 CWT. All Rights Reserved.</p>
         <p>Website Engineered with <svg class="pro-heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by LALA</p>
     </footer>
 
-    <!-- INTERACTION LOGIC MATRIX -->
     <script>
         const playersData = [
             { id: 1, name: "Laxmikant Panda", phone: "9040057838", wicketkeeper: "No", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Fast (Roundarm)", image: "image1.png" },
             { id: 2, name: "Subhasis Dhala", phone: "8249110850", wicketkeeper: "Yes", role: "All rounder", batSkill: "Left Handed", bowlSkill: "Left Arm Chuck (Spin only)", image: "image2.png" },
-            { id: 3, name: "Chandan Sutar", phone: "6372526337", wicketkeeper: "No", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Chuck (Spin only)", image: "image3.png" },
+            { id: 3, name: "Chandan Sutar", phone: "6372526337", wicketkeeper: "No", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Chuck (Spin only)", image: "image3.png", isOrganiser: true },
             { id: 4, name: "Biswajit Barik", phone: "7992524035", wicketkeeper: "Yes", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Fast (Roundarm)", image: "image4.png" },
             { id: 5, name: "Abhisek Nayak", phone: "8984008538", wicketkeeper: "Yes", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Fast (Roundarm)", image: "image5.png" },
             { id: 6, name: "Pratik Kumar", phone: "9556473348", wicketkeeper: "No", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Chuck (Spin only)", image: "image6.png" },
-            { id: 7, name: "Abhisek Dash", phone: "9437942900", wicketkeeper: "No", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Chuck (Spin only)", image: "image7.png" },
+            { id: 7, name: "Abhisek Dash", phone: "9437942900", wicketkeeper: "No", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Chuck (Spin only)", image: "image7.png", isOrganiser: true },
             { id: 8, name: "Mukund Kumar", phone: "7381357196", wicketkeeper: "No", role: "All rounder", batSkill: "Left Handed", bowlSkill: "Left Arm Fast (Roundarm)", image: "image8.png" },
             { id: 9, name: "Sunny Choubey", phone: "6371853427", wicketkeeper: "Yes", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Chuck (Spin only)", image: "image9.png" },
             { id: 10, name: "Sanu Behera", phone: "6370421093", wicketkeeper: "Yes", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Fast (Roundarm)", image: "image10.png" },
@@ -596,7 +453,7 @@
             { id: 20, name: "Subhasis Karan(Bapu)", phone: "8249586882", wicketkeeper: "No", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Chuck (Spin only)", image: "image20.png" },
             { id: 21, name: "Tapan Mohanty", phone: "9372312153", wicketkeeper: "Yes", role: "Batsman", batSkill: "Right Handed", bowlSkill: "None / TBD", image: "image21.png" },
             { id: 22, name: "Priyanshu Singh", phone: "+91 93487 64582", wicketkeeper: "Yes", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Spin (Roundarm)", image: "image22.png" },
-            { id: 23, name: "Subhasis Nayak", phone: "7205429805", wicketkeeper: "No", role: "Batsman", batSkill: "Right Handed", bowlSkill: "None / TBD", image: "image23.png" },
+            { id: 23, name: "Subhasis Nayak", phone: "7205429805", wicketkeeper: "No", role: "Batsman", batSkill: "Right Handed", bowlSkill: "None / TBD", image: "image23.png", isOrganiser: true },
             { id: 24, name: "Surya Prasad Nayak", phone: "7978195975", wicketkeeper: "No", role: "All rounder", batSkill: "Left Handed", bowlSkill: "Left Arm Chuck (Spin only)", image: "image24.png" },
             { id: 25, name: "Prakash Sahoo(Kunu)", phone: "8917577898", wicketkeeper: "No", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Fast (Roundarm)", image: "image25.png" },
             { id: 26, name: "Akshya Kumar Sahoo", phone: "9692072715", wicketkeeper: "Yes", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Fast (Roundarm)", image: "image26.png" },
@@ -634,6 +491,7 @@
             players.forEach(player => {
                 const card = document.createElement('div');
                 
+                // Reverted back to the requested original, clean external layout structure
                 if (player.id <= 6) {
                     card.className = 'player-card captain-tier';
                 } else {
@@ -663,6 +521,14 @@
             document.getElementById('modalRole').innerText = player.role;
             document.getElementById('modalBat').innerText = player.batSkill;
             document.getElementById('modalBowl').innerText = player.bowlSkill;
+
+            // Injects or wipes the custom Organiser indicator highlight lane at the top of the details panel card
+            const orgContainer = document.getElementById('modalOrganiserContainer');
+            if (player.isOrganiser) {
+                orgContainer.innerHTML = `<span class="modal-organiser-line">⚡ TOURNAMENT ORGANISER</span>`;
+            } else {
+                orgContainer.innerHTML = '';
+            }
 
             const imgContainer = document.getElementById('modalImageContainer');
             imgContainer.innerHTML = `<img src="${player.image}" alt="${player.name}" id="targetModalImg">`;
