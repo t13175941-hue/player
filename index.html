@@ -159,7 +159,7 @@
             background: #0d121c;
         }
 
-        /* --- PLAYER MATRIX GRID (CLEAN DIRECTORY VERSION) --- */
+        /* --- PLAYER MATRIX GRID --- */
         .grid-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -319,7 +319,6 @@
 
         .modal-right { flex: 1.9; padding: 50px; display: flex; flex-direction: column; justify-content: center; }
         
-        /* --- HIGH VISIBILITY INNER CARD ORGANISER HIGHLIGHT LINE --- */
         .modal-organiser-line {
             display: inline-block;
             align-self: flex-start;
@@ -354,9 +353,11 @@
 </head>
 <body>
 
+    <!-- LIGHT KINETIC ENERGY BACKGROUND PARTICLES -->
     <div class="bg-glow-orb orb-1"></div>
     <div class="bg-glow-orb orb-2"></div>
 
+    <!-- LIVE BROADCAST STREAM TICKER -->
     <div class="ticker-wrap">
         <div class="ticker">
             <div class="ticker-item"><span>•</span> CHATTIS WARRIOR TOURNAMENT SEASON 2026</div>
@@ -368,18 +369,22 @@
         </div>
     </div>
 
+    <!-- MAIN CORPORATE BRANDING HEADER -->
     <header>
         <h1 id="main-title">Chattis Warrior Tournament</h1>
         <p id="sub-title">Official Campaign Pool</p>
         <div class="stats-badge">48 Registered System Records</div>
     </header>
 
+    <!-- LIVE CONTEXT FIELD SEARCH -->
     <div class="search-container">
         <input type="text" id="searchBar" class="search-input" placeholder="Search roster by entering player name...">
     </div>
 
+    <!-- ACTIVE PLAYER MATRIX ROSTER -->
     <main class="grid-container" id="gridContainer"></main>
 
+    <!-- DYNAMIC PROFILE DETAIL SLIDEOUT MODAL -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-box">
             
@@ -394,9 +399,7 @@
                 <div class="modal-img-frame" id="modalImageContainer"></div>
             </div>
 
-            <!-- RIGHT DETAILS PANEL CONTAINER -->
             <div class="modal-right">
-                <!-- Programmatically targetable holder lane for Organiser notification logic strings -->
                 <div id="modalOrganiserContainer"></div>
                 <h2 class="modal-player-name" id="modalName">Player Name</h2>
                 
@@ -424,11 +427,13 @@
         </div>
     </div>
 
+    <!-- PREMIUM COMPLIANT FOOTER -->
     <footer>
         <p>© 2026 CWT. All Rights Reserved.</p>
         <p>Website Engineered with <svg class="pro-heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by LALA</p>
     </footer>
 
+    <!-- INTERACTION LOGIC MATRIX -->
     <script>
         const playersData = [
             { id: 1, name: "Laxmikant Panda", phone: "9040057838", wicketkeeper: "No", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Fast (Roundarm)", image: "image1.png" },
@@ -477,8 +482,8 @@
             { id: 44, name: "Adarsh Behera", phone: "8249729424", wicketkeeper: "No", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Chuck (Spin only)", image: "image44.png" },
             { id: 45, name: "Sourav Das", phone: "7327055464", wicketkeeper: "No", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Chuck (Spin only)", image: "image45.png" },
             { id: 46, name: "Dibya Darshan Das", phone: "8144946560", wicketkeeper: "Yes", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Fast (Roundarm)", image: "image46.png" },
-            { id: 47, name: "TBD", phone: "TBD", wicketkeeper: "TBD", role: "TBD", batSkill: "TBD", bowlSkill: "TBD", image: "image47.png" },
-            { id: 48, name: "TBD", phone: "TBD", wicketkeeper: "TBD", role: "TBD", batSkill: "TBD", bowlSkill: "TBD", image: "image48.png" }
+            { id: 47, name: "Rajendra Nayak", phone: "8144699867", wicketkeeper: "Yes", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Spin (Spin only)", image: "image47.png" },
+            { id: 48, name: "Bishnu Nayak", phone: "8327725115", wicketkeeper: "No", role: "All rounder", batSkill: "Right Handed", bowlSkill: "Right Arm Fast (Roundarm)", image: "image48.png" }
         ];
 
         const gridContainer = document.getElementById('gridContainer');
@@ -491,7 +496,6 @@
             players.forEach(player => {
                 const card = document.createElement('div');
                 
-                // Reverted back to the requested original, clean external layout structure
                 if (player.id <= 6) {
                     card.className = 'player-card captain-tier';
                 } else {
@@ -522,7 +526,6 @@
             document.getElementById('modalBat').innerText = player.batSkill;
             document.getElementById('modalBowl').innerText = player.bowlSkill;
 
-            // Injects or wipes the custom Organiser indicator highlight lane at the top of the details panel card
             const orgContainer = document.getElementById('modalOrganiserContainer');
             if (player.isOrganiser) {
                 orgContainer.innerHTML = `<span class="modal-organiser-line">⚡ TOURNAMENT ORGANISER</span>`;
